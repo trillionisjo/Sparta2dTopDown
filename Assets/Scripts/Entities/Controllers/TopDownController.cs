@@ -10,6 +10,13 @@ public class TopDownController : MonoBehaviour
     protected bool IsAttacking { get; set; }
     private float timeSinceLastAttack = float.MaxValue;
 
+    protected CharacterStatsHandler stats { get; private set; }
+
+    protected virtual void Awake ()
+    {
+        stats = GetComponent<CharacterStatsHandler>();
+    }
+
     private void Update ()
     {
         HandleAttackDelay();
@@ -17,7 +24,7 @@ public class TopDownController : MonoBehaviour
 
     private void HandleAttackDelay ()
     {
-        if (timeSinceLastAttack < 0.2f)
+        if (timeSinceLastAttack < stats.CurrentStat.attackSO.delay) 
             timeSinceLastAttack += Time.deltaTime;
         else if (IsAttacking)
         {

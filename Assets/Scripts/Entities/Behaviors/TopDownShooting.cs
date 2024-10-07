@@ -19,6 +19,7 @@ public class TopDownShooting : MonoBehaviour
         controller.LookEvent += OnAim;
         controller.AttackEvent += OnShoot;
     }
+
     private void OnAim (Vector2 direction)
     {
         aimDirection = direction;
@@ -33,5 +34,4 @@ public class TopDownShooting : MonoBehaviour
     {
         Instantiate(TestPrefab, projectileSpawnPosition.position, Quaternion.identity);
     }
-
 }
