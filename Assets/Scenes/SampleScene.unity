@@ -820,9 +820,11 @@ GameObject:
   - component: {fileID: 92182852}
   - component: {fileID: 92182855}
   - component: {fileID: 92182854}
+  - component: {fileID: 92182858}
   - component: {fileID: 92182853}
   - component: {fileID: 92182856}
   - component: {fileID: 92182857}
+  - component: {fileID: 92182859}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
@@ -917,7 +919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStat:
     statChangeType: 2
-    maxHealth: 3
+    maxHealth: 20
     speed: 2
     attackSO: {fileID: 11400000, guid: 0c516dab20fb32e48848759eafa51247, type: 2}
   statModifiers: []
@@ -973,6 +975,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8322447c4e9452b45b0f4206b8233cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &92182858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92182850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e64dcbb160f5fc46b70bc0a0b301a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+--- !u!114 &92182859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92182850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb59e52b1f261f94fa758b1d41bd95e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &196980568
@@ -1365,6 +1392,7 @@ GameObject:
   - component: {fileID: 819559061}
   - component: {fileID: 819559058}
   - component: {fileID: 819559065}
+  - component: {fileID: 819559068}
   - component: {fileID: 819559056}
   - component: {fileID: 819559066}
   - component: {fileID: 819559063}
@@ -1577,6 +1605,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8322447c4e9452b45b0f4206b8233cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &819559068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819559055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e64dcbb160f5fc46b70bc0a0b301a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!1 &1165138990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,18 +3634,20 @@ GameObject:
   - component: {fileID: 1177783643}
   - component: {fileID: 1177783642}
   - component: {fileID: 1177783641}
+  - component: {fileID: 1177783648}
   - component: {fileID: 1177783645}
   - component: {fileID: 1177783647}
   - component: {fileID: 1177783640}
   - component: {fileID: 1177783646}
   - component: {fileID: 1177783638}
+  - component: {fileID: 1177783649}
   m_Layer: 6
   m_Name: OrcShaman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1177783638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3777,6 +3820,31 @@ MonoBehaviour:
   armRenderer: {fileID: 1755874072}
   armPivot: {fileID: 79275044}
   characterRenderer: {fileID: 2049012752}
+--- !u!114 &1177783648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177783637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e64dcbb160f5fc46b70bc0a0b301a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+--- !u!114 &1177783649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177783637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb59e52b1f261f94fa758b1d41bd95e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1194404875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,7 +5528,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1194404877}
   - {fileID: 519420032}
-  - {fileID: 819559060}
   - {fileID: 1791635903}
+  - {fileID: 819559060}
   - {fileID: 92182851}
   - {fileID: 1177783644}

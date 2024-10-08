@@ -70,6 +70,13 @@ public class ProjectileController : MonoBehaviour
         }
         else if (IsLayerMatched(rangedAttackSO.target.value, collision.gameObject.layer))
         {
+            var hs = collision.GetComponent<HealthSystem>();
+            if (hs != null)
+            {
+                bool isAttackApplied = hs.ChangeHealth(-rangedAttackSO.power);
+                if (isAttackApplied && rangedAttackSO.isOnKnockback)
+                    ApplyKnockback(collision);
+            }
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
@@ -77,5 +84,14 @@ public class ProjectileController : MonoBehaviour
     private bool IsLayerMatched (int value, int layer)
     {
         return value == (value | 1 << layer);
+    }
+
+    private void ApplyKnockback (Collider2D collision)
+    {
+        var movement = collision.GetComponent<TopDownMovement>();
+        if (movement == null)
+            return;
+
+        movement.ApplyKnockback(transform, rangedAttackSO.knockbackPower, rangedAttackSO.knockbackTime);
     }
 }

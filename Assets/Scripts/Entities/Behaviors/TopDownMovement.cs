@@ -8,6 +8,8 @@ public class TopDownMovement : MonoBehaviour
     private CharacterStatsHandler characterStatsHandler;
 
     private Vector2 movementDirection = Vector2.zero;
+    private Vector2 knockback = Vector2.zero;
+    private float knockbackDuration = 0f;
 
     private void Awake ()
     {
@@ -24,6 +26,9 @@ public class TopDownMovement : MonoBehaviour
     private void FixedUpdate ()
     {
         ApplyMovement(movementDirection);
+
+        if (knockbackDuration > 0f)
+            knockbackDuration -= Time.deltaTime;
     }
 
     private void OnCharacterMove (Vector2 direction)
@@ -34,6 +39,14 @@ public class TopDownMovement : MonoBehaviour
     private void ApplyMovement (Vector2 direction)
     {
         direction *= characterStatsHandler.CurrentStat.speed;
+        if (knockbackDuration > 0f)
+            direction += knockback;
         movementRigidbody.velocity = direction;
+    }
+
+    public void ApplyKnockback(Transform other, float power, float duration)
+    {
+        knockbackDuration = duration;
+        knockback = (transform.position - other.position).normalized * power;
     }
 }
