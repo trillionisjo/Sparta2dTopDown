@@ -4,22 +4,14 @@ using Random = UnityEngine.Random;
 
 public class TopDownShooting : MonoBehaviour
 {
-    #region Components
     private TopDownController controller;
-    #endregion
-
     [SerializeField] private Transform projectileSpawnPosition;
-    public GameObject TestPrefab;
-    
-    private ObjectPool pool;
-
     private Vector2 aimDirection = Vector2.right;
 
 
     private void Awake ()
     {
         controller = GetComponent<TopDownController>();
-        pool = FindObjectOfType<ObjectPool>();
     }
 
     private void Start ()
@@ -55,7 +47,7 @@ public class TopDownShooting : MonoBehaviour
 
     private void CreateProjectile (RangedAttackSO rangedAttackSO, float angle)
     {
-        GameObject obj = pool.SpawnFromPool(rangedAttackSO.bulletNameTag);
+        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(rangedAttackSO.bulletNameTag);
         obj.transform.position = projectileSpawnPosition.position;
         var controller = obj.GetComponent<ProjectileController>();
         controller.InitializeAttack(RotateVector2(aimDirection, angle), rangedAttackSO);
