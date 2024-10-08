@@ -5,7 +5,7 @@ public class TopDownController : MonoBehaviour
 {
     public event Action<Vector2> MoveEvent;
     public event Action<Vector2> LookEvent;
-    public event Action AttackEvent;
+    public event Action<AttackSO> AttackEvent;
 
     protected bool IsAttacking { get; set; }
     private float timeSinceLastAttack = float.MaxValue;
@@ -29,7 +29,7 @@ public class TopDownController : MonoBehaviour
         else if (IsAttacking)
         {
             timeSinceLastAttack = 0;
-            CallAttackEvent();
+            CallAttackEvent(stats.CurrentStat.attackSO);
         }
     }
 
@@ -43,8 +43,8 @@ public class TopDownController : MonoBehaviour
         LookEvent?.Invoke(direction);
     }
 
-    private void CallAttackEvent ()
+    private void CallAttackEvent (AttackSO attackSO)
     {
-        AttackEvent?.Invoke();
+        AttackEvent?.Invoke(attackSO);
     }
 }

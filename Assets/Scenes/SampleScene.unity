@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 87602768}
   - component: {fileID: 87602770}
   - component: {fileID: 87602769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315349219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449174843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573173014}
   - component: {fileID: 573173015}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,12 +1027,11 @@ GameObject:
   - component: {fileID: 819559059}
   - component: {fileID: 819559061}
   - component: {fileID: 819559058}
-  - component: {fileID: 819559057}
+  - component: {fileID: 819559065}
   - component: {fileID: 819559056}
-  - component: {fileID: 819559062}
   - component: {fileID: 819559063}
   - component: {fileID: 819559064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,18 +1048,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be71c47add49a984ca8f9c362dec4b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &819559057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819559055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e009dbbf19f141246ac6270ba789e025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &819559058
@@ -1181,21 +1168,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75861186, y: 1.0700805}
   m_EdgeRadius: 0
---- !u!114 &819559062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819559055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89fcf3932bf87924db3f3b3ca7d104bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armRenderer: {fileID: 573173015}
-  armPivot: {fileID: 315349219}
-  characterRenderer: {fileID: 1962046072}
 --- !u!114 &819559063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,6 +1200,18 @@ MonoBehaviour:
     speed: 5
     attackSO: {fileID: 11400000, guid: 733f808b68b45a24b8c46718c3277520, type: 2}
   statModifiers: []
+--- !u!114 &819559065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819559055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085762e068bdf24459a7d04e7f6cfaa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1165138990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1223,7 @@ GameObject:
   - component: {fileID: 1165138991}
   - component: {fileID: 1165138993}
   - component: {fileID: 1165138992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3242,7 +3226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1791635903}
   - component: {fileID: 1791635902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962046071}
   - component: {fileID: 1962046072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3392,7 @@ GameObject:
   - component: {fileID: 2038820704}
   - component: {fileID: 2038820703}
   - component: {fileID: 2038820702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4128,7 +4112,7 @@ GameObject:
   - component: {fileID: 2114854284}
   - component: {fileID: 2114854286}
   - component: {fileID: 2114854285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
